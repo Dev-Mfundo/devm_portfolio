@@ -5,17 +5,6 @@
   --primary-bg: #000000;
 }
 
-@keyframes fadeIn{
-  from{
-    opacity: 0;
-    transform: translateX(10px);
-  }
-  to{
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @font-face{
   font-family: 'BungeeInline';
   src: url('./assets/fonts/bungee-font/BungeeInline-Regular.ttf') format('truetype');
@@ -31,28 +20,31 @@
   src: url('./assets/fonts/unna/Unna-Regular.ttf') format('truetype');
 }
 
-*{
-  transition: color 0.3 ease;
-}
 
 
 #root {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  /*max-width: 1200px;*/
+  width: 100%;
 }
 
-body{
-  display: block;
-  margin: 0 auto;
-  max-width: 1780px;
+
+body {
+  margin: 0;
   background-color: var(--primary-bg);
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  z-index: 3;
+  background-color: var(--primary-bg);
 }
 
 .logo{
@@ -71,24 +63,33 @@ body{
 }
 
 .header .menu-nav a{
-  color: #ffff;
+  color: var(--primary-text-color);
   font-family: BungeeOutline;
   font-weight: 300;
   margin: 0 7px;
   opacity: 60%;
   font-size: 24px;
   text-decoration: none;
+  opacity: 0;
+  animation: fadeDown 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
 }
 
 .header .menu-nav a:hover{
   text-decoration: underline;
   opacity: 90%;
+  color: #ffff;
+  transition: all 0.3s ease;
 }
 
 .social-media{
   position: absolute;
   right: 50px;
   top: 80px;
+  opacity: 0;
+  animation: fadeDown 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
+  z-index: 3;
 }
 
 .social-media a img{
@@ -99,40 +100,98 @@ body{
   border-radius: 50%;
 }
 
-h1{
+.social-media a img:hover{
+  outline: 1px solid #ffff;  
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px) scale(0.98);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(4px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+h1 {
   font-family: BungeeOutline;
   color: var(--primary-text-color);
-  line-height: 1;
-  font-weight: 400;
   font-size: 128px;
+  font-weight: 400;
+  line-height: 1;
   position: absolute;
   top: -30px;
   z-index: 2;
   background-color: var(--primary-bg);
-  animation: fadeIn 1.2s ease-out forwards;
   opacity: 0;
+  animation: fadeDown 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   animation-delay: 0.3s;
 }
 
-h2{
+h2 {
   font-family: BungeeOutline;
   color: var(--primary-text-color);
-  font-weight: 400;
   font-size: 128px;
+  font-weight: 400;
   position: absolute;
   bottom: -100px;
   right: 50px;
   z-index: 2;
   background-color: var(--primary-bg);
+  opacity: 0;
+  animation: fadeUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.6s;
 }
 
-.home-cartoon{
+.home-cartoon {
   position: absolute;
-  top: 40px;
-  z-index: 1;
-  left: 50%;
+  width: 400px;
+  top:40px;
+  right: 35%;
   transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  animation: fadeInScale 1.2s ease-out forwards;
+  animation-delay: 0.6s;
 }
+
 
 .global-btn{
   color: var(--primary-btn-color);
