@@ -1,5 +1,9 @@
 const Button=({type,value,onClick,style})=>{
-	return <Button type={type} onClick={onClick} style={style}>{value}</Button>
+	return(
+		<div>
+		 <button type={type} onClick={onClick} className="global-btn">{value}</button>
+		</div>
+		)
 }
 
 export default Button

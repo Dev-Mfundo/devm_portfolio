@@ -7,6 +7,7 @@ import Contacts from './pages/Contacts'
 
 const App = () => {
   return (
+    <div className="app">
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='/contacts' element={<Contacts />} />
       </Routes>
     </Router>
+  </div>
   )
 }
 
