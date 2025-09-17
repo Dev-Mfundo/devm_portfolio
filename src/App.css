@@ -332,14 +332,20 @@ body {
 }
 
 .container form nav input::placeholder{
-  opacity: 0.7;
+  opacity: 0.8;
+  font-family: BungeeInline;
+  font-size: 14px;
+}
+
+.container form nav textarea::placeholder{
+  opacity: 0.8;
   font-family: BungeeInline;
   font-size: 14px;
 }
 
 #message{
-  padding: 9px 10px;
-  height: 60px;
+  padding: 5px 10px;
   border-radius: 10px;
   resize: vertical;
+  font-size: 14px;
 }
