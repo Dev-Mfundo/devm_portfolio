@@ -9,7 +9,18 @@ const About=()=>{
       <SocialMedia />
       <main>
       <section className="container">
-      	<h2>ABOUT</h2>
+        <div className="about-section">
+          <div className="about-description">
+            <h2 className="my-name">AARON<br/>
+              <span className="last-name">JIANE</span>
+            </h2>
+
+          </div>
+          <div className="vertical-line"></div>
+          <div className="about-stack">
+            <h2 className="stack-heading">STACK</h2>
+          </div>
+        </div>
       </section>
       </main>
       <Footer/>
