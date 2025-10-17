@@ -20,6 +20,7 @@
   src: url('./assets/fonts/unna/Unna-Regular.ttf') format('truetype');
 }
 
+
 *{
     box-sizing: border-box;
 }
@@ -32,7 +33,6 @@
 .app{
   width: 1200px;
   max-width: 1200px;
-
 }
 
 body {
@@ -67,6 +67,7 @@ body {
 .header .menu-nav{
   display: flex;
   flex-direction: row;
+  z-index: 3;
 }
 
 .header .menu-nav a{
@@ -86,7 +87,7 @@ body {
 }
 
 .social-media{
-  position: absolute;
+  position: fixed;
   right: 50px;
   top: 80px;
   opacity: 0;
@@ -198,7 +199,7 @@ body {
 }
 
 
-.global-btn{
+.global-btn, #submit-btn{
   color: var(--primary-btn-color);
   background-color: var(--primary-btn-bg);
   border: 1px solid var(--primary-btn-color);
@@ -211,13 +212,30 @@ body {
   margin: 0;
   height:57px;
   width: 170px;
+  opacity: 0;
+  animation: fadeUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
 }
 
+#submit-btn{
+  display: block;
+  margin: 13px auto 0 auto;
+  font-size: 25px;
+  height:37px;
+  width: 100px;
+}
 
 .global-btn:hover {
   background-color: var(--primary-btn-hover-bg);
   transform: scale(1.03);
 }
+
+#submit-btn:hover{
+  background-color: var(--primary-btn-hover-bg);
+  transform: scale(1.03);
+}
+
+
 
 .container{
   display: flex;
@@ -261,42 +279,6 @@ body {
   transform: translateX(-50%);
 }
 
-.line-row{
-  position: absolute;
-  bottom: 100px;
-  right: 50%;
-  transform: translateX(50%);
-  padding: 0.7px;
-  width: 85%;
-  background-color: #ffff;
-}
-
-.work-nav{
-  margin-top: 0;
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-}
-
-.work-nav nav{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 100px 10px 100px;
-}
-
-.work-nav nav h4{
-  font-size: 64px;
-}
-
-.work-nav nav button{
-  margin-top: 95px;
-  opacity: 0;
-  animation: fadeDown 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  animation-delay: 0.3s;
-}
 
 .container form{
   display: block;
@@ -343,9 +325,146 @@ body {
   font-size: 14px;
 }
 
+form > :first-child {
+  margin-top: 22px;
+}
+
 #message{
   padding: 5px 10px;
   border-radius: 10px;
   resize: vertical;
   font-size: 14px;
+}
+
+
+.work-section {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.list-work {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  bottom: 60px;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.work-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding:  0;
+  position: relative;
+}
+
+.work-row h4 {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 0;
+  position: relative;
+  top: 4px;
+}
+
+.work-row .view-btn {
+  color: var(--primary-btn-color);
+  background-color: var(--primary-btn-bg);
+  border: 1px solid var(--primary-btn-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 25px;
+  font-family: BungeeInline;
+  padding: ;
+  margin: 0;
+  height: 40px;
+  width: 110px;
+  opacity: 0;
+  animation: fadeUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.view-btn:hover{
+  background-color: var(--primary-btn-hover-bg);
+  transform: scale(1.03);
+}
+.line-row {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0;
+  margin: 0.2rem auto 0 auto;
+  animation: fadeDown 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.below-description{
+  text-align: left;
+  color: var(--primary-text-color);
+  margin: 0;
+  width: 100%;
+  margin: 0.1rem auto 0 auto;
+  font-size: 17px;
+  color: #aaa;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.work-item:nth-of-type(1) .line-row {
+  background-color: #333;
+}
+.work-item:nth-of-type(2) .line-row {
+  background-color: #333;
+}
+.work-item:nth-of-type(3) .line-row {
+  background-color: #333;
+}
+
+
+.notification{
+  /*font-family: BungeeOutline;*/
+  color: green;
+  position: absolute;
+  margin: 0;
+  top: 220px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 24px;
+}
+
+.error{
+  color: red;
+  position: absolute;
+  margin: 0;
+  top: 220px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 24px;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
