@@ -9,7 +9,7 @@ const Overview=({project)=>{
       <main>
       <section className="container">
       	<h2>{project.name}</h2>
-      	<a hrer=`${project.link}`>VISIT SITE</a>
+      	<a hrer=`${project.link}` target="_blank" rel="noopener noreferrer">VISIT SITE</a>
       </section>
       <article>
       </article>

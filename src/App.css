@@ -229,11 +229,47 @@ body {
   justify-content: space-around;
 }
 
+
 .stack-heading{
   position: relative;
   left: 35%;
   transform: translateX(-35%);
 }
+
+
+.about-description{
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card {
+  position: absolute;
+  left: 3%;
+  top: 40%;
+  font-family: Unna, serif;
+  padding: 0px;
+  max-width: 600px;
+  margin: 0px auto;
+  color: var(--primary-text-color);
+  opacity: 0;
+  animation: fadeDown 1.1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.about-card h5 {
+  text-transform: uppercase;
+  line-height: 2;
+  font-size: 25px;
+  margin-bottom: 0px;
+  color: var(--primary-text-color);
+}
+
+.about-card p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0;
+}
+
 
 .vertical-line{
   position: absolute;
@@ -258,6 +294,67 @@ body {
   bottom: 50px;
   left: 275px;
 }
+
+
+.timeline-section{
+  position: absolute;
+  left: 3%;
+  top: 65%;
+  width: 45%;
+  opacity: 0;
+  animation: fadeDown 1.1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.time-line-header {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.company-name {
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-text-color);
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 0;
+}
+
+.date-range {
+  position: relative;
+  bottom: 15px;
+  font-size: 18px;
+  color: #999;
+  font-weight: 500;
+}
+
+.position {
+  background: var(--primary-btn-bg);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.divider {
+  height: 2px;
+  background: #e0e0e0;
+  margin: 0;
+}
+
 .global-btn, #submit-btn{
   color: var(--primary-btn-color);
   background-color: var(--primary-btn-bg);
@@ -299,6 +396,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  marrgin: 0;
 }
 
 .container::before {
@@ -366,7 +464,7 @@ body {
 }
 
 .container form nav{
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   display: flex;
   flex-direction: column;
 }
